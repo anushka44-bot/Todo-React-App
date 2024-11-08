@@ -1,0 +1,19 @@
+.head_contain{
+  font-weight: 800;
+  font-size: 40px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+input{
+  width: 100%;
+}
+.item_container{
+text-align: left;
+}
+
+.Kg_margin{
+  margin: 10px 5px;
+}
+.Kg_button{
+  min-width: 80px;
+}
