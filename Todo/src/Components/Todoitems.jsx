@@ -1,4 +1,4 @@
-function todo_items({ todoname, tododate, ondeleteclick }) {
+function todo_items({ todoname, tododate }) {
   return (
     <>
       <center className="todo-container">
@@ -7,11 +7,7 @@ function todo_items({ todoname, tododate, ondeleteclick }) {
             <div className="col-4">{todoname}</div>
             <div className="col-4">{tododate}</div>
             <div className="col-2">
-              <button
-                type="button"
-                className="btn btn-danger Kg_button"
-                onClick={() => ondeleteclick(todoname)}
-              >
+              <button type="button" className="btn btn-danger Kg_button">
                 Delete
               </button>
             </div>

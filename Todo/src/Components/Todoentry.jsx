@@ -1,48 +1,21 @@
-import { useState } from "react";
-import { MdAddCircle } from "react-icons/md";
-
-function todo_entry({ onnewitems }) {
-  const [todoname, settodoname] = useState();
-  const [duedate, setduedate] = useState();
-
-  const handlenamechange = (event) => {
-    settodoname(event.target.value);
-  };
-  const handledatechange = (event) => {
-    setduedate(event.target.value);
-  };
-  const handleaddbuttonclicked = () => {
-    onnewitems(todoname, duedate);
-    settodoname("");
-    setduedate("");
-  };
-
+function todo_entry() {
   return (
     <>
       <center className="todo-container">
         <div className="container">
-          <div className="row Kg_margin">
+          <form className="row Kg_margin" onSubmit={handleaddbuttonclicked}>
             <div className="col-4">
-              <input
-                type="text"
-                placeholder="Enter Todo Here"
-                value={todoname}
-                onChange={handlenamechange}
-              />
+              <input type="text" placeholder="Enter Todo Here" />
             </div>
             <div className="col-4">
-              <input type="date" value={duedate} onChange={handledatechange} />
+              <input type="date" />
             </div>
             <div className="col-2">
-              <button
-                type="button"
-                className="btn btn-success Kg_button"
-                onClick={handleaddbuttonclicked}
-              >
-                <MdAddCircle />
+              <button type="button" className="btn btn-success Kg_button">
+                Add
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </center>
     </>
