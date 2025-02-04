@@ -3,12 +3,17 @@ import styles from "./Todohead.module.css";
 import { useContext } from "react";
 import { Todo_items } from "../store/todo-items-store";
 
-const Item = ({ todoItems }) => {
+const Item = ({ ondeleteclick }) => {
+  const todoitems = useContext(Todo_items);
   return (
     <>
       <div className={styles.item_container}>
-        {todoItems.map((items) => (
-          <Todoitems tododate={items.duedate} todoname={items.name}></Todoitems>
+        {todoitems.map((items) => (
+          <Todoitems
+            tododate={items.duedate}
+            todoname={items.name}
+            ondeleteclick={ondeleteclick}
+          ></Todoitems>
         ))}
       </div>
     </>
